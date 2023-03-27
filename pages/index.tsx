@@ -17,7 +17,7 @@ const Home = () => {
             className="block w-48 h-12 mb-12 bg-gray-400 rounded-md mx-auto text-[#20262E] align-middle pt-2 text-lg hover:bg-[#20262E] hover:text-gray-400 border border-solid border-gray-400"
             href="/movie-nuts"
           >
-            Let's get nuts
+            Let&apos;s get nuts ►
           </Link>
           <button
             className="w-48 h-10  border border-solid border-gray-400 rounded-md text-xl hover:bg-gray-400 hover:text-[#20262E] "

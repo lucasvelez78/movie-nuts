@@ -60,7 +60,7 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
           <p className="w-[90%] tracking-wide">{movie.overview}</p>
           <div className="mt-6 grid gap-1 grid-cols-5 max-[1000px]:hidden">
             {cast.map((person) => (
-              <div className="mt-6 flex-row">
+              <div className="mt-6 flex-row" key={movie.id}>
                 <Image
                   src={
                     person.profile_path !== null
@@ -71,7 +71,6 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
                   height={160}
                   alt={movie.title}
                   className="min-h-[180px]"
-                  key={movie.id}
                 />
                 <p>{person.name}</p>
               </div>

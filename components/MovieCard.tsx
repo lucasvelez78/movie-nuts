@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Movie } from "@/types/types";
 
-const MovieCard = ({ id, poster_path, title }: Movie): JSX.Element => {
+const MovieCard = ({ id, poster_path }: Movie): JSX.Element => {
   return (
-    <div className="items-center max-w-[230px]">
+    <div className="items-center max-w-[230px] card" aria-label="cards">
       <Link href={`/${id}`}>
         <Image
           key={id}

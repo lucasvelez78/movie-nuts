@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next";
 import type { Movie, Cast } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const id = params?.id as string;
@@ -24,11 +25,19 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
   return (
     <>
-      <Link href="/" className="w-96 block">
-        <h1 className="text-5xl font-rampart text-gray-400 pl-12 mb-12">
-          Movie Nuts
-        </h1>
-      </Link>
+      <Head>
+        <title>{movie.title}</title>
+      </Head>
+      <div className="flex content-between w-full">
+        <Link href="/movie-nuts" className="w-96 block">
+          <h1 className="text-5xl font-rampart text-gray-400 pl-12 mb-12">
+            Movie Nuts
+          </h1>
+        </Link>
+        <Link href="/movie-nuts" className="w-10 inline-block ml-auto mr-20">
+          <h1 className="text-4xl text-gray-400 pl-12 mb-12">X</h1>
+        </Link>
+      </div>
       <div className="flex max-[760px]:flex-col">
         <Image
           src={

@@ -1,4 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+To use this Next.js web application you must have a Google account or a Github account.
+Using themoviedb API, we are able to check the latest movies out there, or find your favorites. Just an overview and cast.
+
+## Dependencies
+
+next-auth
+typescript
+tailwind
 
 ## Getting Started
 

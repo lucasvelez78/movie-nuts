@@ -71,6 +71,7 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
                   height={160}
                   alt={movie.title}
                   className="min-h-[180px]"
+                  key={movie.id}
                 />
                 <p>{person.name}</p>
               </div>

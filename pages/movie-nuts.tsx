@@ -95,6 +95,7 @@ const Home = ({ movies }: { movies: Movies }) => {
         <div className="my-10 ml-6 grid gap-8 grid-cols-5 ">
           {fetchedMovies.map((movie) => (
             <MovieCard
+              key={movie.id}
               id={movie.id}
               poster_path={movie.poster_path}
               title={movie.title}

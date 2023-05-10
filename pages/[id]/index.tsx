@@ -35,7 +35,7 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
           </h1>
         </Link>
         <Link href="/movie-nuts" className="w-10 inline-block ml-auto mr-20">
-          <h1 className="text-4xl text-[#ECDBBA] pl-12 mb-12">X</h1>
+          <h1 className="text-4xl text-[#A9333A] pl-12 mb-12">X</h1>
         </Link>
       </div>
       <div className="flex max-[760px]:flex-col">

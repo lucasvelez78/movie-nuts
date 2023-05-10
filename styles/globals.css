@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply px-8 py-8 bg-[#20262E];
+    @apply px-8 py-8 bg-[url('https://cdn5.vectorstock.com/i/1000x1000/73/99/movie-citema-seat-hall-interior-background-vector-20707399.jpg')] w-full h-full bg-cover bg-center bg-fixed;
   }
 }

@@ -92,7 +92,7 @@ const Home = ({ movies }: { movies: Movies }) => {
             Sign Out
           </button>
         </header>
-        <div className="my-10 ml-6 grid gap-8 grid-cols-5 ">
+        <div className="my-10 ml-6 grid gap-8 grid-cols-5 bg-[url('https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80')]">
           {fetchedMovies.map((movie) => (
             <MovieCard
               key={movie.id}

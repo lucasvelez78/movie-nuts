@@ -56,7 +56,7 @@ const Home = ({ movies }: { movies: Movies }) => {
         <Head>
           <title>Movie Nuts</title>
         </Head>
-        <header className="mb-32 flex justify-between fixed w-full">
+        <header className="mb-32 flex justify-between">
           <Link href="/movie-nuts">
             <h1 className="text-5xl font-rampart text-[#A9333A] pl-12 mt-3">
               Movie Nuts

@@ -28,7 +28,7 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
       <Head>
         <title>{movie.title}</title>
       </Head>
-      <div className="flex content-between w-full">
+      <div className="flex content-between w-full fixed">
         <Link href="/movie-nuts" className="w-96 block">
           <h1 className="text-5xl font-rampart text-[#A9333A] pl-12 mb-12">
             Movie Nuts

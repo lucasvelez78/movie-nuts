@@ -20,7 +20,7 @@ const Home = () => {
             Let&apos;s get nuts ►
           </Link>
           <button
-            className="w-48 h-10  border border-solid border-[#ECDBBA] rounded-md text-xl hover:bg-[#ECDBBA] hover:text-[#ECDBBA] "
+            className="w-48 h-10  border border-solid border-[#ECDBBA] rounded-md text-xl hover:bg-[#ECDBBA] hover:text-gray-800 "
             onClick={() => signOut()}
           >
             Sign Out

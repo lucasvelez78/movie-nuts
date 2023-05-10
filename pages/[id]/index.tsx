@@ -30,12 +30,12 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
       </Head>
       <div className="flex content-between w-full">
         <Link href="/movie-nuts" className="w-96 block">
-          <h1 className="text-5xl font-rampart text-gray-400 pl-12 mb-12">
+          <h1 className="text-5xl font-rampart text-[#A9333A] pl-12 mb-12">
             Movie Nuts
           </h1>
         </Link>
         <Link href="/movie-nuts" className="w-10 inline-block ml-auto mr-20">
-          <h1 className="text-4xl text-gray-400 pl-12 mb-12">X</h1>
+          <h1 className="text-4xl text-[#ECDBBA] pl-12 mb-12">X</h1>
         </Link>
       </div>
       <div className="flex max-[760px]:flex-col">
@@ -50,10 +50,10 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
           alt={movie.title}
           className="min-w-[460px]"
         />
-        <div className="pl-8 text-[#adb2c7]">
+        <div className="pl-8 text-[#ECDBBA]">
           <div className="flex justify-between">
             <h1 className="text-4xl mb-6 max-[760px]:mt-16">{movie.title}</h1>
-            <p className="mr-20 bg-[#adb2c7] text-[#474E68] max-h-10 p-2 rounded-full max-[760px]:mt-16">
+            <p className="mr-20 bg-[#ECDBBA] text-[#474E68] max-h-10 p-2 rounded-full max-[760px]:mt-16">
               {movie.vote_average?.toFixed(1)}
             </p>
           </div>

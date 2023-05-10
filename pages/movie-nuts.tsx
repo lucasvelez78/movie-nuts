@@ -58,21 +58,21 @@ const Home = ({ movies }: { movies: Movies }) => {
         </Head>
         <header className="mb-32 flex justify-between">
           <Link href="/movie-nuts">
-            <h1 className="text-5xl font-rampart text-gray-400 pl-12 mt-3">
+            <h1 className="text-5xl font-rampart text-[#A9333A] pl-12 mt-3">
               Movie Nuts
             </h1>
           </Link>
           <form onSubmit={onSubmit} className="p-4 mt-0">
-            <label className="text-[#474E68] pr-2 text-2xl">title: </label>
+            <label className="text-[#ECDBBA] pr-2 text-2xl">title: </label>
             <input
-              className="rounded-3xl px-3 py-2 bg-[#474E68] text-slate-50"
+              className="rounded-3xl px-3 py-2 bg-[#ECDBBA] text-[#C84B31] placeholder-[#C84B31] border-0 opacity-80"
               placeholder="Search"
               value={searchKeyWord}
               onChange={handleChange}
             ></input>
             <button type="submit" className="p-2 w-4">
               <svg
-                className="ml-1  text-[#474E68]  -mb-1.5"
+                className="ml-1  text-[#ECDBBA]  -mb-1.5"
                 stroke="currentColor"
                 fill="none"
                 stroke-width="2"
@@ -88,7 +88,7 @@ const Home = ({ movies }: { movies: Movies }) => {
               </svg>
             </button>
           </form>
-          <button className="text-gray-400 mr-8" onClick={() => signOut()}>
+          <button className="text-[#ECDBBA] mr-8" onClick={() => signOut()}>
             Sign Out
           </button>
         </header>

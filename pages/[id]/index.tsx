@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { GetServerSideProps } from "next";
 import type { Movie, Cast } from "@/types/types";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import Head from "next/head";
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const id = params?.id as string;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_ENDPOINT}/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+    `${process.env.NEXT_PUBLIC_ENDPOINT}/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&append_to_response=videos`
   );
   const movie: Movie = await res.json();
 
@@ -23,6 +24,23 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 };
 
 const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
+  const [playTrailer, setPlayTrailer] = useState<boolean>(false);
+  const [trailerKey, setTrailerKey] = useState<string>("");
+  console.log(movie);
+  console.log(trailerKey);
+
+  useEffect(() => {
+    const trailer = movie.videos?.results.find(
+      (item) => item.name === "Official Trailer"
+    );
+    if (trailer) {
+      setTrailerKey(trailer.key);
+      setPlayTrailer(true);
+    } else {
+      alert("Sorry, no video available");
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -45,7 +63,7 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
               ? `${process.env.NEXT_PUBLIC_IMAGE_PATH}${movie.poster_path}`
               : "/no-poster.jpeg"
           }
-          width={440}
+          width={450}
           height={800}
           alt={movie.title}
           className="min-w-[460px]"
@@ -58,9 +76,18 @@ const MovieDetail = ({ movie, cast }: { movie: Movie; cast: Cast }) => {
             </p>
           </div>
           <p className="w-[90%] tracking-wide">{movie.overview}</p>
+          <div className="bg-[#A9333A] text-[#ECDBBA] my-4 w-24 p-2 rounded-md">
+            <a
+              target="_blank"
+              href={`https://www.youtube.com/watch?v=${trailerKey}`}
+              rel="noopener noreferrer"
+            >
+              Play Trailer
+            </a>
+          </div>
           <div className="mt-6 grid gap-1 grid-cols-5 max-[1000px]:hidden">
-            {cast.map((person) => (
-              <div className="mt-6 flex-row" key={movie.id}>
+            {cast.map((person, index) => (
+              <div className="mt-6 flex-row" key={index}>
                 <Image
                   src={
                     person.profile_path !== null

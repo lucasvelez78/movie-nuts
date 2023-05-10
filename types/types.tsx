@@ -15,6 +15,12 @@ export type Movie = {
   adult?: boolean;
   overview?: string;
   vote_average?: number;
+  videos?: {
+    results: {
+      name: string;
+      key: string;
+    }[];
+  };
 };
 
 export type Cast = {
